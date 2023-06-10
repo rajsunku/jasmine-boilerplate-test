@@ -2,6 +2,17 @@ name: CI
 on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
+      name: Checkout Code
+      runs-on: ubuntu-latest
+
+      steps:
+
+        - name: Checkout Code
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
